@@ -4,8 +4,7 @@
 	<title>Redirect</title>
 	<script>
 		function redirect() {
-			var url = window.location.href;
-			var slug = url.substring(url.lastIndexOf('/') + 1);
+			var slug = window.location.pathname.substring(1);
 			console.log(slug);
 			if (slug) {
 				var redirectUrl = "https://hostguru.ml/" + slug;
@@ -15,6 +14,6 @@
 	</script>
 </head>
 <body onload="redirect()">
-	<h1> Welcome To Host Guru final</h1>
+	<!-- Your website content here -->
 </body>
 </html>
