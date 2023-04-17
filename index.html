@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Redirect</title>
+	<title>Extract Slug from URL</title>
 	<script>
-		function redirect() {
+		window.onload = function() {
 			var url = window.location.href;
-			var slug = url.substring(url.lastIndexOf('/') + 1);
-			console.log(url);
+			var slug = url.substring(url.lastIndexOf("/") + 1);
 			console.log(slug);
 		}
 	</script>
 </head>
-<body onload="redirect()">
-	<!-- Your website content here -->
+<body>
+	<h1>Extract Slug from URL</h1>
 </body>
 </html>
