@@ -1,16 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Extract Slug from URL</title>
+	<title>Redirect Slug to External URL</title>
 	<script>
 		window.onload = function() {
 			var url = window.location.href;
 			var slug = url.substring(url.lastIndexOf("/") + 1);
 			console.log(slug);
+			var externalURL = "https://hostguru.ml/" + slug;
+			var xhr = new XMLHttpRequest();
+			xhr.open("HEAD", externalURL, true);
+			xhr.onreadystatechange = function() {
+				if (xhr.readyState == 4) {
+					if (xhr.status == 200) {
+						window.location.replace(externalURL);
+					} else {
+						console.log("Slug does not exist");
+					}
+				}
+			}
+			xhr.send();
 		}
 	</script>
 </head>
 <body>
-	<h1>Extract Slug from URL</h1>
+	<h1>Redirect Slug to External URL</h1>
 </body>
 </html>
