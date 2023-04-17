@@ -6,8 +6,9 @@
 		function redirect() {
 			var url = window.location.href;
 			var slug = url.substring(url.lastIndexOf('/') + 1);
+			console.log(slug);
 			if (slug) {
-				var redirectUrl = "https://hostguru.ml/" + slug;
+				var redirectUrl = "https://hostguru.ml" + slug;
 				window.location.href = redirectUrl;
 			} else {
 				window.location.href = "https://hostguru.ml/";
